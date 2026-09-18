@@ -1,0 +1,371 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------- */
+/* Global Smooth Scrolling & Momentum Optimization                          */
+/* -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Sleek Tactical Scrollbar Styling                                           */
+/* -------------------------------------------------------------------------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(71, 85, 105, 0.45) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(71, 85, 105, 0.45);
+  border-radius: 9999px;
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.75);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Leaflet Tactical Dark Map Styling & Smooth Transitions                    */
+/* -------------------------------------------------------------------------- */
+.leaflet-container {
+  background-color: #070c18 !important;
+  font-family: inherit;
+  outline: none !important;
+}
+
+/* Smooth Leaflet Tile Rendering & Transitions */
+.leaflet-tile-container {
+  transition: opacity 0.25s ease-out;
+}
+
+.leaflet-tile {
+  transition: opacity 0.25s ease-out !important;
+  will-change: transform, opacity;
+}
+
+/* Smooth Leaflet Zoom & Pan Animation Engine */
+.leaflet-zoom-anim .leaflet-zoom-animated {
+  -webkit-transition: -webkit-transform 0.38s cubic-bezier(0.2, 0.9, 0.3, 1) !important;
+  -moz-transition: -moz-transform 0.38s cubic-bezier(0.2, 0.9, 0.3, 1) !important;
+  transition: transform 0.38s cubic-bezier(0.2, 0.9, 0.3, 1) !important;
+}
+
+.leaflet-pan-anim .leaflet-pan-animated {
+  -webkit-transition: -webkit-transform 0.42s cubic-bezier(0.2, 0.9, 0.3, 1) !important;
+  -moz-transition: -moz-transform 0.42s cubic-bezier(0.2, 0.9, 0.3, 1) !important;
+  transition: transform 0.42s cubic-bezier(0.2, 0.9, 0.3, 1) !important;
+}
+
+/* Tactical Midnight Filter */
+.tactical-midnight-tiles .leaflet-tile {
+  filter: invert(100%) hue-rotate(180deg) brightness(82%) contrast(96%) saturate(60%) !important;
+}
+
+/* Tactical High-Contrast Radar Filter */
+.tactical-dark-tiles .leaflet-tile {
+  filter: brightness(0.65) invert(1) contrast(2.8) hue-rotate(200deg) saturate(0.25) !important;
+}
+
+/* Custom Tactical Leaflet Controls Styling */
+.leaflet-bar {
+  border: 1px solid #1e293b !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.leaflet-bar a {
+  background-color: #0d1424 !important;
+  color: #94a3b8 !important;
+  border-bottom: 1px solid #1e293b !important;
+  transition: all 0.2s ease;
+}
+
+.leaflet-bar a:hover {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Smooth Interaction & Micro-animation Utility Classes                       */
+/* -------------------------------------------------------------------------- */
+.smooth-transition {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smooth-hover {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+  will-change: transform;
+}
+
+.smooth-hover:hover {
+  transform: translateY(-1.5px);
+}
+
+.smooth-hover:active {
+  transform: translateY(0px) scale(0.99);
+}
+
+/* Smooth pulsing radar radar wave */
+@keyframes smooth-radar-wave {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.smooth-radar-pulse {
+  animation: smooth-radar-wave 2.8s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+  will-change: transform, opacity;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Theme Light Mode Architecture (Daytime Operations HUD)                     */
+/* -------------------------------------------------------------------------- */
+.theme-light {
+  color-scheme: light;
+}
+
+.theme-light body {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Light Mode Global Scrollbar */
+.theme-light * {
+  scrollbar-color: rgba(148, 163, 184, 0.6) transparent;
+}
+
+.theme-light ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.6);
+}
+
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.85);
+}
+
+/* Light Mode Global Canvas / Application Shell Backgrounds */
+.theme-light .bg-\[\#070a12\],
+.theme-light .bg-\[\#070b14\],
+.theme-light .bg-\[\#070c18\],
+.theme-light .bg-\[\#080d18\],
+.theme-light .bg-\[\#080d19\],
+.theme-light .bg-\[\#080e1a\],
+.theme-light main {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* Light Mode Header, Sidebar & Primary Panels */
+.theme-light header,
+.theme-light aside,
+.theme-light .bg-\[\#090d16\],
+.theme-light .bg-\[\#090e1a\],
+.theme-light .bg-\[\#0a0f1d\],
+.theme-light .bg-\[\#0b101d\],
+.theme-light .bg-\[\#0b1120\],
+.theme-light .bg-\[\#0c1322\],
+.theme-light .bg-\[\#0c1626\],
+.theme-light .bg-\[\#0d121f\],
+.theme-light .bg-\[\#0d1322\],
+.theme-light .bg-\[\#0d1527\],
+.theme-light .bg-\[\#0e1626\],
+.theme-light .bg-\[\#10182a\],
+.theme-light .bg-\[\#111927\],
+.theme-light .bg-\[\#111c30\],
+.theme-light .bg-\[\#132035\],
+.theme-light .bg-\[\#162238\],
+.theme-light .bg-\[\#18263e\] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+}
+
+/* Light Mode Wells, Sub-cards & Nested Backgrounds */
+.theme-light .bg-\[\#070a12\]\/80,
+.theme-light .bg-\[\#0b101d\]\/80,
+.theme-light .bg-\[\#0e1626\]\/80,
+.theme-light .bg-\[\#111927\]\/80,
+.theme-light .bg-\[\#090f1d\],
+.theme-light .bg-\[\#090f1e\],
+.theme-light .bg-\[\#0b1322\],
+.theme-light .bg-\[\#0f1d33\],
+.theme-light .bg-\[\#0d1424\],
+.theme-light .bg-\[\#0d1c24\] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Light Mode Borders */
+.theme-light .border-\[\#151f32\],
+.theme-light .border-\[\#172338\],
+.theme-light .border-\[\#17243a\],
+.theme-light .border-\[\#18263e\],
+.theme-light .border-\[\#1a263d\],
+.theme-light .border-\[\#1a2942\],
+.theme-light .border-\[\#1b2a42\],
+.theme-light .border-\[\#1b2a45\],
+.theme-light .border-\[\#1b2b45\],
+.theme-light .border-\[\#1b2b46\],
+.theme-light .border-\[\#1c2e4a\],
+.theme-light .border-\[\#1d2a42\],
+.theme-light .border-\[\#1d2b45\],
+.theme-light .border-\[\#1d2d47\],
+.theme-light .border-\[\#1d2d48\],
+.theme-light .border-\[\#1e2c45\],
+.theme-light .border-\[\#1e2c47\],
+.theme-light .border-\[\#1e2e4a\],
+.theme-light .border-\[\#1f2e46\],
+.theme-light .border-\[\#1f2e47\],
+.theme-light .border-\[\#203456\],
+.theme-light .border-\[\#223554\],
+.theme-light .border-\[\#24334f\],
+.theme-light .border-\[\#243450\],
+.theme-light .border-\[\#253859\],
+.theme-light .border-\[\#2a3f65\],
+.theme-light .divide-\[\#151f32\] > :not([hidden]) ~ :not([hidden]),
+.theme-light .divide-\[\#172338\] > :not([hidden]) ~ :not([hidden]),
+.theme-light .divide-\[\#1d2a42\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #e2e8f0 !important;
+}
+
+/* Light Mode Text Hierarchy */
+.theme-light .text-slate-100,
+.theme-light .text-slate-200,
+.theme-light .text-white:not(.badge-white):not(.btn-white) {
+  color: #0f172a !important;
+}
+
+.theme-light .text-slate-300 {
+  color: #334155 !important;
+}
+
+.theme-light .text-slate-400 {
+  color: #64748b !important;
+}
+
+.theme-light .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Keep High Priority & Strategic Alert Indicators Clear */
+.theme-light .text-red-400,
+.theme-light .text-red-500 {
+  color: #dc2626 !important;
+}
+
+.theme-light .text-emerald-300,
+.theme-light .text-emerald-400 {
+  color: #059669 !important;
+}
+
+.theme-light .text-amber-300,
+.theme-light .text-amber-400 {
+  color: #d97706 !important;
+}
+
+.theme-light .text-blue-300,
+.theme-light .text-blue-400 {
+  color: #2563eb !important;
+}
+
+.theme-light .text-purple-300,
+.theme-light .text-purple-400 {
+  color: #7c3aed !important;
+}
+
+/* Light Mode Form Elements & Inputs */
+.theme-light input:not([type="checkbox"]):not([type="radio"]),
+.theme-light select,
+.theme-light textarea {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.theme-light input::placeholder,
+.theme-light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Light Mode Hover Backgrounds */
+.theme-light .hover\:bg-\[\#111927\]:hover,
+.theme-light .hover\:bg-\[\#15233c\]:hover,
+.theme-light .hover\:bg-\[\#1f3458\]:hover,
+.theme-light .hover\:bg-\[\#1c3050\]:hover,
+.theme-light .hover\:bg-\[\#18263e\]:hover,
+.theme-light .hover\:bg-slate-800:hover,
+.theme-light tr:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* Active navigation items in Light Mode */
+.theme-light .bg-\[\#15233c\] {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+}
+
+/* Light Mode Leaflet Map Styling */
+.theme-light .leaflet-container {
+  background-color: #f1f5f9 !important;
+}
+
+.theme-light .tactical-midnight-tiles .leaflet-tile {
+  filter: none !important;
+}
+
+.theme-light .tactical-dark-tiles .leaflet-tile {
+  filter: contrast(1.05) saturate(1.1) !important;
+}
+
+.theme-light .leaflet-bar {
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  background-color: #ffffff !important;
+}
+
+.theme-light .leaflet-bar a {
+  background-color: #ffffff !important;
+  color: #334155 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.theme-light .leaflet-bar a:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* Light Mode Popups in Leaflet */
+.theme-light .leaflet-popup-content-wrapper,
+.theme-light .leaflet-popup-tip {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+}
+
