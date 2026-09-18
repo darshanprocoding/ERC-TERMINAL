@@ -59,24 +59,36 @@ export const Header: React.FC<HeaderProps> = ({ currentView, unreadAlertsCount =
         {/* Tactical Theme Selector Toggle (Dark Mode vs Light Mode) */}
         <button
           onClick={toggleTheme}
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition-all shadow-sm group ${
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl border text-xs font-bold transition-all duration-300 shadow-sm cursor-pointer group active:scale-95 ${
             isDark 
               ? 'bg-[#0e1626] hover:bg-[#15233c] text-amber-300 border-[#1b2a45] shadow-[0_0_10px_rgba(245,158,11,0.1)]' 
               : 'bg-white hover:bg-slate-50 text-amber-600 border-slate-200 shadow-[0_0_10px_rgba(217,119,6,0.15)]'
           }`}
           title={`Current: ${isDark ? 'Dark Mode (Tactical Night)' : 'Light Mode (Daytime Ops)'}. Click to switch theme.`}
         >
-          {isDark ? (
-            <>
-              <Moon size={14} className="text-amber-400 group-hover:-rotate-12 transition-transform" />
-              <span className="hidden sm:inline font-mono">Dark</span>
-            </>
-          ) : (
-            <>
-              <Sun size={14} className="text-amber-500 group-hover:rotate-45 transition-transform" />
-              <span className="hidden sm:inline font-mono">Light</span>
-            </>
-          )}
+          <div className="relative w-4 h-4 flex items-center justify-center overflow-hidden">
+            <span
+              className={`absolute inset-0 flex items-center justify-center transition-all duration-350 transform ${
+                isDark
+                  ? 'opacity-100 rotate-0 scale-100'
+                  : 'opacity-0 -rotate-90 scale-50 pointer-events-none'
+              }`}
+            >
+              <Moon size={14} className="text-amber-400 group-hover:-rotate-12 transition-transform duration-200" />
+            </span>
+            <span
+              className={`absolute inset-0 flex items-center justify-center transition-all duration-350 transform ${
+                isDark
+                  ? 'opacity-0 rotate-90 scale-50 pointer-events-none'
+                  : 'opacity-100 rotate-0 scale-100'
+              }`}
+            >
+              <Sun size={14} className="text-amber-500 group-hover:rotate-45 transition-transform duration-200" />
+            </span>
+          </div>
+          <span className="hidden sm:inline font-mono transition-all duration-300">
+            {isDark ? 'Dark' : 'Light'}
+          </span>
         </button>
 
         {/* Tactical 2-Way Radio Call Launcher */}

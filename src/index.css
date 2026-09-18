@@ -19,6 +19,53 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Global Ultra-Smooth Theme Transition Engine                               */
+/* -------------------------------------------------------------------------- */
+html,
+body,
+header,
+aside,
+main,
+nav,
+section,
+article,
+div:not(.leaflet-tile-container):not(.leaflet-zoom-animated):not(.leaflet-marker-icon):not(.leaflet-marker-pane):not(.leaflet-popup-pane):not(.leaflet-overlay-pane):not(.recharts-wrapper),
+button,
+input,
+select,
+textarea,
+table,
+thead,
+tbody,
+tr,
+th,
+td,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  transition-property: background-color, border-color, color, box-shadow, text-decoration-color;
+  transition-duration: 350ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+svg,
+svg path,
+svg circle,
+svg rect,
+svg line,
+svg polyline,
+svg polygon {
+  transition-property: stroke, fill, color, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* -------------------------------------------------------------------------- */
 /* Sleek Tactical Scrollbar Styling                                           */
 /* -------------------------------------------------------------------------- */
 * {
@@ -52,6 +99,7 @@ body {
   background-color: #070c18 !important;
   font-family: inherit;
   outline: none !important;
+  transition: background-color 350ms cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 /* Smooth Leaflet Tile Rendering & Transitions */
@@ -60,8 +108,8 @@ body {
 }
 
 .leaflet-tile {
-  transition: opacity 0.25s ease-out !important;
-  will-change: transform, opacity;
+  transition: opacity 0.25s ease-out, filter 350ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  will-change: transform, opacity, filter;
 }
 
 /* Smooth Leaflet Zoom & Pan Animation Engine */
